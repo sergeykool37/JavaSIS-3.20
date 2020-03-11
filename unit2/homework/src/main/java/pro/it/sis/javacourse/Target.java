@@ -14,9 +14,9 @@ public class Target {
         return iceDamage;
     }
 
-    private int physicalDamage;
+    public int physicalDamage;
 
-    private int fireDamage;
+    public int fireDamage;
 
-    private int iceDamage;
+    public int iceDamage;
 }
