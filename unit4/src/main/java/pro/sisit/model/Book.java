@@ -31,10 +31,6 @@ public class Book {
     public String getIsbn() {
         return isbn;
     }
-    @Override
-    public String toString(){
-        return String.format("%s;%s;%s;%s", getName(), getAuthor(),getGenre(),getIsbn());
-    }
 
     @Override
     public boolean equals(Object o) {

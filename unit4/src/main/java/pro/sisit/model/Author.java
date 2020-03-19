@@ -10,7 +10,6 @@ public class Author {
     public Author(String name, String birthPlace) {
         this.name = name;
         this.birthPlace = birthPlace;
-
     }
 
     public String getName() {
@@ -19,11 +18,6 @@ public class Author {
 
     public String getBirthPlace() {
         return birthPlace;
-    }
-
-    @Override
-    public String toString(){
-        return String.format("%s;%s", getName(), getBirthPlace());
     }
 
     @Override
