@@ -21,10 +21,7 @@ public class Author {
         return birthPlace;
     }
 
-    @Override
-    public String toString(){
-        return String.format("%s;%s", getName(), getBirthPlace());
-    }
+
 
     @Override
     public boolean equals(Object o) {

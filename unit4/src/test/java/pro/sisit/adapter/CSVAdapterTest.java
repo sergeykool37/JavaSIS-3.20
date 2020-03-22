@@ -12,6 +12,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pro.sisit.adapter.impl.CSVAdapter;
+import pro.sisit.adapter.impl.CSVAdapterAuthor;
+import pro.sisit.adapter.impl.CSVAdapterBook;
 import pro.sisit.model.Author;
 import pro.sisit.model.Book;
 
@@ -61,7 +63,7 @@ public class CSVAdapterTest {
             new FileWriter(bookFilePath.toFile(), true),500);
 
         CSVAdapter<Book> bookCsvAdapter =
-            new CSVAdapter(Book.class, bookReader, bookWriter);
+            new CSVAdapterBook(Book.class, bookReader, bookWriter);
 
 
         Book book1 = bookCsvAdapter.read(1);
@@ -89,7 +91,7 @@ public class CSVAdapterTest {
         BufferedWriter authorWriter = new BufferedWriter(
                 new FileWriter(authorFilePath.toFile(), true),500);
         CSVAdapter<Author> authorCsvAdapter =
-                new CSVAdapter(Author.class, authorReader, authorWriter);
+                new CSVAdapterAuthor(Author.class, authorReader, authorWriter);
 
 
 
@@ -125,7 +127,7 @@ public class CSVAdapterTest {
             new FileWriter(bookFilePath.toFile(), true));
 
         CSVAdapter<Book> bookCsvAdapter =
-            new CSVAdapter(Book.class, bookReader, bookWriter);
+            new CSVAdapterBook(Book.class, bookReader, bookWriter);
 
         Book newBook = new Book(
             "Чертоги разума. Убей в себе идиота!",
