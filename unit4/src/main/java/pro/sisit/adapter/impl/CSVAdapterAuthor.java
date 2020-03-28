@@ -10,7 +10,7 @@ public class CSVAdapterAuthor extends CSVAdapter<Author> {
         super(entityType, reader, writer);
     }
     @Override
-    public Author FileReaderCommon(String[] parametrs) {
+    public Author fileReaderCommon(String[] parametrs) {
         Author newAuthor = new Author(parametrs[0], parametrs[1]);
         return newAuthor;
     }
@@ -19,8 +19,4 @@ public class CSVAdapterAuthor extends CSVAdapter<Author> {
     public String convertString(Author entity) {
         return String.format("%s;%s;%s;%s", entity.getName(), entity.getBirthPlace());
     }
-
-
-
-
 }

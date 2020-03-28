@@ -22,6 +22,15 @@ public abstract class CSVAdapter<T> implements IOAdapter<T> {
         int countLine = 0;
         String line;
         reader.mark(500);
+        line = getLineForRead(index, countLine);
+        String[] parametrs;
+        String splitElement = ";";
+        parametrs = line.split(splitElement);
+        return (T) fileReaderCommon(parametrs);
+    }
+
+    private String getLineForRead(int index, int countLine) throws IOException {
+        String line;
         while ((line = reader.readLine()) != null) {
             if (countLine == index) {
                 reader.reset();
@@ -30,14 +39,10 @@ public abstract class CSVAdapter<T> implements IOAdapter<T> {
                 countLine += 1;
             }
         }
-        String[] parametrs;
-        String splitElement = ";";
-        parametrs = line.split(splitElement);
-        return (T) FileReaderCommon(parametrs);
-
+        return line;
     }
 
-    public abstract T FileReaderCommon(String[] parametrs);
+    public abstract T fileReaderCommon(String[] parametrs);
 
     @Override
     public int append(T entity) throws IOException {
@@ -46,6 +51,10 @@ public abstract class CSVAdapter<T> implements IOAdapter<T> {
         writer.newLine();
         writer.flush();
         int index = 0;
+        return getLineForWrite(index);
+    }
+
+    private int getLineForWrite(int index) throws IOException {
         while ((reader.readLine()) != null) {
             index += 1;
         }

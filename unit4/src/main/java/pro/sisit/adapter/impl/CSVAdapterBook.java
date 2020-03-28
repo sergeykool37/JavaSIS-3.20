@@ -9,13 +9,12 @@ public class CSVAdapterBook extends CSVAdapter<Book> {
         super(entityType, reader, writer);
     }
     @Override
-    public Book FileReaderCommon(String[] parametrs) {
+    public Book fileReaderCommon(String[] parametrs) {
         Book newBook = new Book(parametrs[0], parametrs[1], parametrs[2], parametrs[3]);
         return newBook;
     }
-
     @Override
     public String convertString(Book entity) {
-        return String.format("%s;%s;%s;%s", entity.getName(), entity.getAuthor(),entity.getGenre(),entity.getIsbn());
+        return String.format("%s;%s;%s;%s", entity.getName(), entity.getAuthor(), entity.getGenre(), entity.getIsbn());
     }
 }
