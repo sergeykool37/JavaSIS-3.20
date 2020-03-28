@@ -9,13 +9,19 @@ import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import pro.sisit.javacourse.PathFinder;
 import pro.sisit.javacourse.optimal.DeliveryTask;
+import pro.sisit.javacourse.optimal.Route;
+import pro.sisit.javacourse.optimal.RouteType;
 import pro.sisit.javacourse.optimal.Transport;
 
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static pro.sisit.javacourse.TestData.*;
+import static pro.sisit.javacourse.optimal.RouteType.Road;
+import static pro.sisit.javacourse.optimal.RouteType.Sea;
 
 
 public class TestPathFinder {
@@ -40,6 +46,14 @@ public class TestPathFinder {
         PathFinder pathFinder = getPathFinder();
         Transport optimalTransport = pathFinder.getOptimalTransport(KingKongDelivery, null);
         Assertions.assertNull(optimalTransport);
+    }
+
+
+    private BigDecimal getLenght(Transport transport,DeliveryTask deliveryTask) {
+        for (Route route:deliveryTask.getRoutes()){
+            if (transport.getType()==route.getType()){return route.getLength();}
+        }
+        return null;
     }
 
 
