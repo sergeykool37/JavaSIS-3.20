@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc357098-25d7-4fcf-809a-b946bed7c2ae" name="Default Changelist" comment="" />
+    <list default="true" id="04fe88b2-3c67-4140-b76d-3fc0cf57b869" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/weather.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-shell.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/WeatherApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/data/WeatherDataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/data/WeatherDataServiceJdbcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/dto/MainDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/dto/WeatherDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/shell/WeatherShellCommands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/web/WeatherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/sergeykool37/weather/web/impl/WeatherServiceRestImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/sergeykool37/weather/WeatherApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/sergeykool37/weather/web/impl/WeatherServiceRestImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,26 +34,11 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view />
-      </state>
-    </system>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1a4jWhWmEuHXjMZHGjLhxlHCDLo" />
+  <component name="ProjectId" id="1a7ednVth3yPo0VJG82m4ZgzVTh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -39,32 +46,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaSIS-3.20/unit7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.github.sergeykool37.wearth.web.impl" />
-      <recent name="com.github.sergeykool37.jokes.web.impl" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.github.sergeykool37.weather.data" />
-      <recent name="com.github.sergeykool37.wearth.web.dto" />
-      <recent name="com.github.sergeykool37.jokes.web.impl" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.WeatherApplication">
+  <component name="RunManager">
     <configuration name="WeatherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.sergeykool37.weather.web.WeatherApplication" />
-      <module name="jokes.main" />
+      <option name="MAIN_CLASS_NAME" value="com.github.sergeykool37.weather.WeatherApplication" />
+      <module name="weather.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.sergeykool37.weather.web.*" />
+          <option name="PATTERN" value="com.github.sergeykool37.weather.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,92 +63,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WearthServiceRestImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.github.sergeykool37.weather.web.impl.WearthServiceRestImplTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="WeatherServiceRestImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.github.sergeykool37.weather.web.impl.WeatherServiceRestImplTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="WeatherServiceRestImplTest.testGetWearth" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.github.sergeykool37.weather.web.impl.WeatherServiceRestImplTest.testGetWearth&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="WeatherServiceRestImplTest.testGetWeather" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.github.sergeykool37.weather.web.impl.WeatherServiceRestImplTest.testGetWeather&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.WeatherServiceRestImplTest" />
-        <item itemvalue="Gradle.WeatherServiceRestImplTest.testGetWeather" />
-        <item itemvalue="Gradle.WeatherServiceRestImplTest.testGetWearth" />
-        <item itemvalue="Gradle.WearthServiceRestImplTest" />
         <item itemvalue="Application.WeatherApplication" />
       </list>
     </recent_temporary>
@@ -167,64 +74,42 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fc357098-25d7-4fcf-809a-b946bed7c2ae" name="Default Changelist" comment="" />
-      <created>1586001794518</created>
+      <changelist id="04fe88b2-3c67-4140-b76d-3fc0cf57b869" name="Default Changelist" comment="" />
+      <created>1586091148143</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586001794518</updated>
+      <updated>1586091148143</updated>
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Решение задачи №7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Решение задачи №7" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1586059627908">
+    <state x="349" y="0" key="CommitChangelistDialog2" timestamp="1586091903347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586059627908" />
-    <state x="343" y="292" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586074614202">
+    <state x="349" y="0" key="CommitChangelistDialog2/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091903347" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1586091903472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="343" y="292" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586074614202" />
-    <state x="-952" y="150" key="FileChooserDialogImpl" timestamp="1586090025840">
-      <screen x="-1440" y="0" width="1440" height="900" />
-    </state>
-    <state x="-952" y="150" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1586090025840" />
-    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586073457366" />
-    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1586090026985">
-      <screen x="-1440" y="0" width="1440" height="900" />
-    </state>
-    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1586090026985" />
-    <state width="1322" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586074586433" />
-    <state width="1322" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.1024@0.0.1366.728" timestamp="1586005147141" />
-    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1586090026985">
-      <screen x="-1440" y="0" width="1440" height="900" />
-    </state>
-    <state width="1396" height="203" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1586090026985" />
-    <state width="1322" height="203" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586074586433" />
-    <state width="1322" height="114" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.1024@0.0.1366.728" timestamp="1586005147141" />
-    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1586090026985">
-      <screen x="-1440" y="0" width="1440" height="900" />
-    </state>
-    <state width="1396" height="203" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1586090026985" />
-    <state width="1322" height="203" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586074586433" />
-    <state width="1322" height="114" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.1024@0.0.1366.728" timestamp="1586005147141" />
-    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1586090026985">
-      <screen x="-1440" y="0" width="1440" height="900" />
-    </state>
-    <state width="1396" height="203" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1586090026985" />
-    <state width="1322" height="203" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586074586433" />
-    <state width="1322" height="114" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.1024@0.0.1366.728" timestamp="1586005147141" />
-    <state x="213" y="21" key="Maven.ArtifactSearchDialog" timestamp="1586071520846">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091903472" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1586091903472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="213" y="21" key="Maven.ArtifactSearchDialog/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586071520846" />
-    <state x="434" y="95" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586052380422">
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091903472" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1586091903472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="434" y="95" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586052380422" />
-    <state x="434" y="95" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728/1366.0.1280.1024@0.0.1366.728" timestamp="1586002406817" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1586057383531">
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091903472" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1586091903472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586057383531" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091903472" />
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586091684343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="494" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586091684343" />
   </component>
 </project>
