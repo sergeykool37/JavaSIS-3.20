@@ -16,6 +16,7 @@ public class Book {
         this.isbn = isbn;
     }
 
+
     public String getName() {
         return name;
     }
@@ -42,9 +43,9 @@ public class Book {
         }
         Book book = (Book) o;
         return getName().equals(book.getName()) &&
-            getAuthor().equals(book.getAuthor()) &&
-            getGenre().equals(book.getGenre()) &&
-            getIsbn().equals(book.getIsbn());
+                getAuthor().equals(book.getAuthor()) &&
+                getGenre().equals(book.getGenre()) &&
+                getIsbn().equals(book.getIsbn());
     }
 
     @Override
