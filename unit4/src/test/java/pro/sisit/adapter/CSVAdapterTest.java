@@ -90,26 +90,26 @@ public class CSVAdapterTest {
     public void testAppend() throws IOException {
 
         Path bookFilePath = Paths.get("test-book-file1.csv");
-
+        try(
         BufferedReader bookReader = new BufferedReader(
                 new FileReader(bookFilePath.toFile()));
 
         BufferedWriter bookWriter = new BufferedWriter(
-                new FileWriter(bookFilePath.toFile(), true));
-
-        CSVAdapter<Book> bookCsvAdapter =
-                new CSVAdapterBook(Book.class, bookReader, bookWriter);
-        Book newBook = new Book(
-                "Чертоги разума. Убей в себе идиота!",
-                "Андрей Курпатов",
-                "Психология",
-                "978-5-906902-91-7");
-        bookReader.mark(6000);
-        int bookIndex = bookCsvAdapter.append(newBook);
-        bookReader.reset();
-        Book bookAtIndex = bookCsvAdapter.read(bookIndex);
-        assertEquals(newBook, bookAtIndex);
-        bookReader.close();
-        bookWriter.close();
+                new FileWriter(bookFilePath.toFile(), true));) {
+            CSVAdapter<Book> bookCsvAdapter =
+                    new CSVAdapterBook(Book.class, bookReader, bookWriter);
+            Book newBook = new Book(
+                    "Чертоги разума. Убей в себе идиота!",
+                    "Андрей Курпатов",
+                    "Психология",
+                    "978-5-906902-91-7");
+            bookReader.mark(6000);
+            int bookIndex = bookCsvAdapter.append(newBook);
+            bookReader.reset();
+            Book bookAtIndex = bookCsvAdapter.read(bookIndex);
+            assertEquals(newBook, bookAtIndex);
+            bookReader.close();
+            bookWriter.close();
+        }
     }
 }
