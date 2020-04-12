@@ -24,6 +24,6 @@ public class WeatherApplication {
 	JdbcTemplate jdbcTemplate;
 	@PostConstruct
 	private  void createWeatherTable(){
-		jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS weather (date VARCHAR(20),city VARCHAR(20),temp VARCHAR(10))");
+		jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS weather (date TIMESTAMP(8),city VARCHAR(20),temp double(2))");
 	}
 }
