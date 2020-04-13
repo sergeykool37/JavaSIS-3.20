@@ -1,20 +1,19 @@
 package pro.sisit.unit9.entity;
 
 import lombok.Data;
-import lombok.Value;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-public class Author {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "first_name")
-    private String firstname;
+    @Column(name="name")
+    private String name;
 
-    @Column(name = "last_name")
-    private String lastname;
+    @Column(name="address")
+    private String address;
 }

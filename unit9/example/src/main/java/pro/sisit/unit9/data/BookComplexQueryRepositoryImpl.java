@@ -5,7 +5,7 @@ import pro.sisit.unit9.entity.Book;
 
 import java.util.List;
 
-public class BookComplexQueryRepositoryImpl implements BookComplexQueryRepository {
+public class BookComplexQueryRepositoryImpl implements BookComplexQueryRepository{
     private JdbcTemplate jdbcTemplate;
 
     BookComplexQueryRepositoryImpl(JdbcTemplate jdbcTemplate) {
@@ -22,4 +22,5 @@ public class BookComplexQueryRepositoryImpl implements BookComplexQueryRepositor
                         .description(rs.getString("description"))
                         .build());
     }
+
 }
