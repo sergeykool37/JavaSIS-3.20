@@ -129,7 +129,6 @@ public class SpringDataApplicationTests {
 		purshedBook3.setCustomer(customer3);
 		purshedBook3.setPrice(new BigDecimal(220));
 		purshedBookRepository.save(purshedBook3);
-
 	}
 	@Test
 	public void testBookServicePayBook(){
@@ -158,7 +157,6 @@ public class SpringDataApplicationTests {
 		assertEquals(new BigDecimal("1337.00"),bookService.SaleAmountBook(book4));
 		assertEquals (new BigDecimal("1137.00"),bookService.TotalCostCustomer(customer1));
 	}
-
 
 	@Test
 	public void testSaveCustomer(){
@@ -191,7 +189,6 @@ public class SpringDataApplicationTests {
 		assertEquals(2, bookRepository.findByYear(1876).size());
 		assertEquals(1, bookRepository.findByYear(1884).size());
 		assertEquals(0, bookRepository.findByYear(2000).size());
-
 	}
 
 	@Test
@@ -205,7 +202,6 @@ public class SpringDataApplicationTests {
 	public void testFindSame() {
 		Book book = new Book();
 		book.setYear(1876);
-
 		assertEquals(2, bookRepository.findAll(Example.of(book)).size());
 	}
 
@@ -225,9 +221,7 @@ public class SpringDataApplicationTests {
 
 	@Test
 	public void testComplexQueryMethod() {
-
 	assertEquals(4, bookRepository.complexQueryMethod().size());
-
 	}
 
 }

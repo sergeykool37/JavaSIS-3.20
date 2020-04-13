@@ -16,22 +16,10 @@ import java.math.BigDecimal;
 public class BookService {
 
     @Autowired
-    private BookRepository bookRepository;
-
-    @Autowired
-    private AuthorRepository authorRepository;
-
-    @Autowired
-    private AuthorOfBookRepository authorOfBookRepository;
-
-    @Autowired
-    CustomerRepository customerRepository;
-
-    @Autowired
     PurshedBookRepository purshedBookRepository;
 
     public static void main(String[] args){ }
-//операция покупки книги покупателем
+    //операция покупки книги покупателем
     public void PayBook(Book book, Customer customer,BigDecimal price){
 
         PurshedBook purshedBook=new PurshedBook();
