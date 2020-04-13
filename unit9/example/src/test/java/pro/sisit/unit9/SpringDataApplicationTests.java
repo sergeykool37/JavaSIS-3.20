@@ -155,11 +155,8 @@ public class SpringDataApplicationTests {
 		assertEquals(1,purshedBookRepository.findByPrice(new BigDecimal(220)).size());
 		assertEquals(0,purshedBookRepository.findByPrice(new BigDecimal(221)).size());
 		assertEquals(1,purshedBookRepository.findByPrice(new BigDecimal(137)).size());
-		System.out.println("**********************************");
-		System.out.println(purshedBookRepository.getSumPrice("Буратино"));
-		System.out.println("**********************************");
-		System.out.println(bookService.SaleAmountBook("Буратино"));
-		System.out.println(purshedBookRepository.getTotalPriceCustomer("Алешка"));
+		assertEquals(new BigDecimal("1337.00"),bookService.SaleAmountBook(book4));
+		assertEquals (new BigDecimal("1137.00"),bookService.TotalCostCustomer(customer1));
 	}
 
 
