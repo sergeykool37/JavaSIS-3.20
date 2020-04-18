@@ -7,25 +7,29 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-//сущность "купленная книга", у которой есть атрибуты покупатель, стоимость, и книга
+
+/**
+ * сущность "купленная книга", у которой есть атрибуты покупатель, стоимость, и книга
+ */
+
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class PurshedBook {
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name="book_id")
-   private Book book;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id")
+    private Book book;
 
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name="customer_id")
-   private Customer customer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
-   @Column(name = "price")
-   private BigDecimal price;
+    @Column(name = "price")
+    private BigDecimal price;
 }

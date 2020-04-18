@@ -3,7 +3,10 @@ package pro.sisit.unit9.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-//сущность "покупатель" с атрибутами имя и строка адреса
+
+/**
+ * *сущность "покупатель" с атрибутами имя и строка адреса
+ **/
 @Data
 @Entity
 public class Customer {
@@ -11,9 +14,9 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
 }

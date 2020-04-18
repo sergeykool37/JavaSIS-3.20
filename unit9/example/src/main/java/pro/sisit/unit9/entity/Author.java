@@ -1,7 +1,6 @@
 package pro.sisit.unit9.entity;
 
 import lombok.Data;
-import lombok.Value;
 
 import javax.persistence.*;
 
