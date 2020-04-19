@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebbc13c5-0adb-4049-9fb8-f5fee7991efb" name="Default Changelist" comment="" />
+    <list default="true" id="ebbc13c5-0adb-4049-9fb8-f5fee7991efb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/unit7/weather/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit7/weather/data/weather.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit7/weather/spring-shell.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="branch_unit1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/unit4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/unit5/unit5-homework" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -40,10 +44,15 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-940" y="207" key="FileChooserDialogImpl" timestamp="1584756607993">
-      <screen x="-1440" y="0" width="1440" height="900" />
+    <state x="474" y="167" key="FileChooserDialogImpl" timestamp="1586174502896">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-940" y="207" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.900@-1440.0.1440.900" timestamp="1584756607993" />
+    <state x="474" y="167" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586174502896" />
+    <state x="395" y="80" width="783" height="567" key="MultipleFileMergeDialog" timestamp="1586174462188">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="395" y="80" width="783" height="567" key="MultipleFileMergeDialog/0.0.1366.728/-1440.0.1440.900@0.0.1366.728" timestamp="1586174462188" />
     <state x="-947" y="165" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584756591381">
       <screen x="-1440" y="0" width="1440" height="900" />
     </state>
