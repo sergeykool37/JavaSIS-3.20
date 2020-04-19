@@ -22,20 +22,22 @@ public class PathFinder {
      */
 
     public Transport getOptimalTransport( DeliveryTask deliveryTask, List<Transport> transports) {
-       Optional<DeliveryTask> deliveryTaskOptional= Optional.ofNullable(deliveryTask);
-       Optional<List> transportOptional = Optional.ofNullable(transports);
-       if (deliveryTaskOptional.isPresent()&transportOptional.isPresent())
-        {
-            ArrayList<Transport> enableTransport=(transports
+            Transport enableTransport=Optional.ofNullable(deliveryTask)
+                    .flatMap(data->Optional.ofNullable(transports))
+                    .map(data->getEnableListTrasport(data,deliveryTask).get(0))
+                    .orElse(null);
+            return enableTransport;
+    }
+
+        private List<Transport> getEnableListTrasport(List<Transport> transports,DeliveryTask deliveryTask){
+            List<Transport> enableTransport=(transports
                     .stream()
                     .filter((transport)-> transport==filterTransport(transport,deliveryTask))
                     .collect(Collectors.toCollection(()->new ArrayList<>())));
             enableTransport
                     .sort(comparing((Transport o) -> o.getVolume()
                             .multiply(getLenght(o, deliveryTask))));
-            return enableTransport.get(0);
-        } else {return null ;}
-    }
+            return enableTransport;}
 
         private BigDecimal getLenght(Transport transport,DeliveryTask deliveryTask) {
             return deliveryTask.getRoutes()
@@ -43,7 +45,7 @@ public class PathFinder {
                     .filter(route -> route.getType()==transport.getType())
                     .findAny().orElse(null).getLength();
         }
-        private Transport filterTransport(Transport transport,DeliveryTask deliveryTask) {
+        private Transport filterTransport(Transport transport, DeliveryTask deliveryTask) {
             boolean result=deliveryTask.getRoutes()
                     .stream()
                     .anyMatch(route -> transport.getType() == route.getType() &
