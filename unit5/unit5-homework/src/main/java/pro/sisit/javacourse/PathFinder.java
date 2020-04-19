@@ -1,6 +1,7 @@
 package pro.sisit.javacourse;
 
 import pro.sisit.javacourse.optimal.DeliveryTask;
+import pro.sisit.javacourse.optimal.Route;
 import pro.sisit.javacourse.optimal.RouteType;
 import pro.sisit.javacourse.optimal.Transport;
 
@@ -40,10 +41,15 @@ public class PathFinder {
             return enableTransport;}
 
         private BigDecimal getLenght(Transport transport,DeliveryTask deliveryTask) {
-            return deliveryTask.getRoutes()
+            Route resultRoute=deliveryTask.getRoutes()
                     .stream()
                     .filter(route -> route.getType()==transport.getType())
-                    .findAny().orElse(null).getLength();
+                    .findAny().orElse(null);
+            return Optional
+                    .ofNullable(resultRoute)
+                    .map(data->data.getLength())
+                    .orElse(null);
+
         }
         private Transport filterTransport(Transport transport, DeliveryTask deliveryTask) {
             boolean result=deliveryTask.getRoutes()
