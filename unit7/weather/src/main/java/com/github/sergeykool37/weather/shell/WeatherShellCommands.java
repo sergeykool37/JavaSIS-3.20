@@ -39,7 +39,8 @@ public class WeatherShellCommands {
     @ShellMethod("Show all records")
     public String show(){
         return weatherDataService.findAll().stream()
-                .collect(Collectors.joining(System.lineSeparator())).toString();
+                .map(data->String.format("%s, %s, %s",data.getWeatherDate(),data.getCity(),data.getTemp()))
+                .collect(Collectors.joining(System.lineSeparator()));
 
     }
 
