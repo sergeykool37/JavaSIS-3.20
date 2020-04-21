@@ -1,13 +1,20 @@
 package com.sergeykool37.restApp.controller.dto;
 
-public class QuestionsItemDTO {
-    public String id;
-    public String name;
-    public int answersCount;
+import com.sergeykool37.restApp.entity.Answer;
+import com.sergeykool37.restApp.entity.Question;
 
-    public QuestionsItemDTO(String id, String name, int answersCount) {
-        this.id = id;
-        this.name = name;
-        this.answersCount = answersCount;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class QuestionsItemDTO extends JournalItemDTO{
+    public String name;
+    public List<AnswerItemDTO> answers;
+
+    public QuestionsItemDTO(Question question, List<Answer> answer) {
+        this.id = question.getId().toString();
+        this.name = question.getName();
+        this.answers = answer.stream()
+                .map(AnswerItemDTO::new)
+                .collect(Collectors.toList());
     }
 }

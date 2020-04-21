@@ -4,9 +4,9 @@ import java.util.List;
 
 public class JournalResultDTO {
     public int total;
-    public List<QuestionsItemDTO> items;
+    public List<? extends JournalItemDTO> items;
 
-    public JournalResultDTO(int total, List<QuestionsItemDTO> items) {
+    public JournalResultDTO(int total, List<? extends JournalItemDTO> items) {
         this.total = total;
         this.items = items;
     }
