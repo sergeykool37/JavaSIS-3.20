@@ -4,6 +4,7 @@ import com.sergeykool37.restApp.controller.dto.JournalEntityDTO;
 import com.sergeykool37.restApp.controller.dto.JournalRequestDTO;
 import com.sergeykool37.restApp.controller.dto.JournalResultDTO;
 import com.sergeykool37.restApp.controller.dto.QuestionsItemDTO;
+import com.sergeykool37.restApp.service.JournalService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -15,10 +16,9 @@ import java.util.stream.Collectors;
 @RequestMapping("api/journal")
 public class JournalRestController {
 
-    private final String QUESTIONS_JOURNAL_ID = "questions";
-    private final List<JournalEntityDTO> journals = Arrays.asList(
-            new JournalEntityDTO(QUESTIONS_JOURNAL_ID, "Вопросы", 15)
-    );
+    private final JournalService journalService;
+
+
     private final List<QuestionsItemDTO> questions = Arrays.asList(
             new QuestionsItemDTO("1", "Сколько было назгулов?", 5),
             new QuestionsItemDTO("2", "Какой ответ на вопрос жизни вселенной и всего остального?", 4),
@@ -32,10 +32,14 @@ public class JournalRestController {
             new QuestionsItemDTO("10", "Как назывался парк, в котором поселили клонированных динозавров?", 2)
     );
 
+    public JournalRestController(JournalService journalService) {
+        this.journalService = journalService;
+    }
+
     @GetMapping("{id}")
     public JournalEntityDTO getJournalEntity(@PathVariable String id){
-        System.out.println("Журнал= "+id);
-        return journals.get(0);
+        return new JournalEntityDTO(journalService.getJournal(id));
+
     }
 
     @PutMapping("{id}/rows")

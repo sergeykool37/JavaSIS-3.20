@@ -1,13 +1,16 @@
 package com.sergeykool37.restApp.controller.dto;
 
+import com.sergeykool37.restApp.entity.Journal;
+import com.sergeykool37.restApp.service.JournalServiceImpl;
+
 public class JournalEntityDTO {
     public String id;
     public String name;
-    public int defaultPageSize;
+    public Long defaultPageSize;
 
-    public JournalEntityDTO(String id, String name, int defaultPageSize) {
-        this.id = id;
-        this.name = name;
-        this.defaultPageSize = defaultPageSize;
+    public JournalEntityDTO(Journal journal) {
+        this.id = journal.getId();
+        this.name = journal.getName();
+        this.defaultPageSize = journal.getDefaultPageSize();
     }
 }
