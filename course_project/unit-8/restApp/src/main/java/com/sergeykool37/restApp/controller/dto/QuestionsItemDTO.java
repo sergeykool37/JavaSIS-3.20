@@ -10,6 +10,8 @@ public class QuestionsItemDTO extends JournalItemDTO{
     public String name;
     public List<AnswerItemDTO> answers;
 
+    public QuestionsItemDTO(){}
+
     public QuestionsItemDTO(Question question, List<Answer> answer) {
         this.id = question.getId().toString();
         this.name = question.getName();

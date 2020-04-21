@@ -7,9 +7,7 @@ public class AnswerItemDTO {
     public String answerText;
     public Boolean isCorrect;
 
-    public AnswerItemDTO() {
-
-    }
+    public AnswerItemDTO() {}
 
     public AnswerItemDTO(Answer answer) {
         id = answer.getId().toString();
