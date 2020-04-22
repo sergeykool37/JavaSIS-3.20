@@ -4,4 +4,5 @@ import com.sergeykool37.restApp.controller.dto.QuestionsItemDTO;
 
 public interface QuestionService {
     QuestionsItemDTO createQuestion(QuestionsItemDTO dto);
+    void editQuestion(QuestionsItemDTO dto);
 }

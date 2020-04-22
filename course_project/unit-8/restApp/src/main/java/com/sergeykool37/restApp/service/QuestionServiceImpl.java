@@ -9,6 +9,7 @@ import com.sergeykool37.restApp.entity.Question;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -25,6 +26,7 @@ public class QuestionServiceImpl implements QuestionService {
     public QuestionsItemDTO createQuestion(QuestionsItemDTO dto) {
         Question question = new Question();
         question.setName(dto.name);
+
         questionRepository.save(question);
 
         for (AnswerItemDTO answerDTO : dto.answers) {
@@ -37,5 +39,29 @@ public class QuestionServiceImpl implements QuestionService {
         }
         return new QuestionsItemDTO(question,
                 answerRepository.findByQuestion(question));
+    }
+
+    @Override
+    public void editQuestion(QuestionsItemDTO dto) {
+        Question question = questionRepository.findById(new Long(dto.id))
+                .orElseThrow(() -> new RuntimeException(String
+                        .format("Не найден вопрос с id %s", dto.id)));
+        question.setName(dto.name);
+        answerRepository.findByQuestion(question);
+        List<Answer> answersCurrent = answerRepository.findByQuestion(question);
+
+        for (int i = 0; i < answersCurrent.size(); i++) {
+            if (answersCurrent.get(i).getQuestion().getId() == question.getId()) {
+                answerRepository.delete(answersCurrent.get(i));
+            }
+        }
+
+        for (AnswerItemDTO answerDTO : dto.answers) {
+            Answer answer = new Answer();
+            answer.setName(answerDTO.answerText);
+            answer.setCorrect(answerDTO.isCorrect);
+            answer.setQuestion(question);
+            answerRepository.save(answer);
+        }
     }
 }
