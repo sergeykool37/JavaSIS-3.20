@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -65,9 +66,14 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
-//    @Override
-//    public List<QuestionsItemDTO> returnQestions() {
-//        return questionRepository.findAll();
-//
-//    }
+    @Override
+    public List<QuestionsItemDTO> returnQestions() {
+        List<Question>questions=(List<Question>)questionRepository.findAll();
+         return questions
+                 .stream()
+                 .map(question -> new QuestionsItemDTO(question,answerRepository
+                         .findByQuestion(question)))
+                 .collect(Collectors.toList());
+
+    }
 }

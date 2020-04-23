@@ -1,10 +1,10 @@
 package com.sergeykool37.restApp.service;
 
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import com.sergeykool37.restApp.controller.dto.QuestionsItemDTO;
 
-@Service
-@Transactional
+import java.util.List;
+
 public interface SessionService {
+    List<QuestionsItemDTO> returnQestions();
 }

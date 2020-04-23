@@ -2,6 +2,7 @@ package com.sergeykool37.restApp.controller;
 
 
 import com.sergeykool37.restApp.controller.dto.QuestionsItemDTO;
+import com.sergeykool37.restApp.entity.Question;
 import com.sergeykool37.restApp.service.QuestionService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +24,9 @@ public class SessionRestController {
         return "100";
     }
 
-    @GetMapping("questions-new")
-    public List<QuestionsItemDTO> GetQestionsNew(){
-        return null;
-//        return questionService.returnQestions();
+    @GetMapping("session/questions-new")
+    public List<QuestionsItemDTO> GetQuestionsNew(){
+        System.out.println(questionService.returnQestions());
+        return questionService.returnQestions();
     }
 }

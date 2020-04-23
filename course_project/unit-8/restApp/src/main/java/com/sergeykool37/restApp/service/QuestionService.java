@@ -7,6 +7,6 @@ import java.util.List;
 public interface QuestionService {
     QuestionsItemDTO createQuestion(QuestionsItemDTO dto);
     void editQuestion(QuestionsItemDTO dto);
-
-//    List<QuestionsItemDTO> returnQestions();
+    public List<QuestionsItemDTO> returnQestions();
+//
 }
