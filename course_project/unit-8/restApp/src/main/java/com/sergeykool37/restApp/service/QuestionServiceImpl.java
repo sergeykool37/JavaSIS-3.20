@@ -64,4 +64,10 @@ public class QuestionServiceImpl implements QuestionService {
             answerRepository.save(answer);
         }
     }
+
+//    @Override
+//    public List<QuestionsItemDTO> returnQestions() {
+//        return questionRepository.findAll();
+//
+//    }
 }

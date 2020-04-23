@@ -4,18 +4,17 @@ import com.sergeykool37.restApp.controller.dto.*;
 import com.sergeykool37.restApp.service.JournalService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/journal")
 public class JournalRestController {
 
+
     private final JournalService journalService;
 
-    public JournalRestController(JournalService journalService) {
+    public JournalRestController( JournalService journalService) {
         this.journalService = journalService;
     }
 

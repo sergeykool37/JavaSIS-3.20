@@ -28,5 +28,11 @@ public class RestAppApplication {
 		journal.setDefaultPageSize(15L);
 		journalRepository.save(journal);
 
+		Journal journalSession=new Journal();
+		journal.setId(JournalServiceImpl.SESSION_JOURNAL_ID);
+		journal.setName("Сессии");
+		journal.setDefaultPageSize(15L);
+		journalRepository.save(journal);
+
 	}
 }
