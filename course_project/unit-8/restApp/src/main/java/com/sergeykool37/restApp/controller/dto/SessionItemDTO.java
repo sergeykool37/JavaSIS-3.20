@@ -6,15 +6,10 @@ import com.sergeykool37.restApp.entity.Session;
 import java.util.List;
 
 public class SessionItemDTO {
-    public String id;
     public String name;
-    public List<QuestionsItemDTO> questions;
+    public List<AnsweredQuestionDTO> questionsList;
 
     public SessionItemDTO(){}
 
-    public SessionItemDTO(List<QuestionsItemDTO> questions, Session session){
-        this.id=session.getId().toString();
-        this.name=session.getFio();
-        this.questions=questions;
-    }
+
 }

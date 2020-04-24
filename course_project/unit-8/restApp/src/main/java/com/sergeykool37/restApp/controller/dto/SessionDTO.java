@@ -13,5 +13,6 @@ public class SessionDTO extends JournalItemDTO {
     public SessionDTO(Session session) {
         this.id = session.getId().toString();
         this.fio = session.getFio();
+        this.percent=session.getPercent();
     }
 }

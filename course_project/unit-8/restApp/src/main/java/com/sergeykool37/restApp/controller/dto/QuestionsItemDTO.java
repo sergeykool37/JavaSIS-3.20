@@ -6,11 +6,13 @@ import com.sergeykool37.restApp.entity.Question;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class QuestionsItemDTO extends JournalItemDTO{
+public class QuestionsItemDTO extends JournalItemDTO {
+
     public String name;
     public List<AnswerItemDTO> answers;
 
-    public QuestionsItemDTO(){}
+    public QuestionsItemDTO() {
+    }
 
     public QuestionsItemDTO(Question question, List<Answer> answer) {
         this.id = question.getId().toString();
@@ -18,5 +20,6 @@ public class QuestionsItemDTO extends JournalItemDTO{
         this.answers = answer.stream()
                 .map(AnswerItemDTO::new)
                 .collect(Collectors.toList());
+
     }
 }
