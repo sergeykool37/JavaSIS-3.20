@@ -1,6 +1,8 @@
 package com.sergeykool37.restApp.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Session {
@@ -13,6 +15,17 @@ public class Session {
 
     @Column
     private Double percent;
+
+    @Column
+    private LocalDateTime date;
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
     public String getFio() {
         return fio;

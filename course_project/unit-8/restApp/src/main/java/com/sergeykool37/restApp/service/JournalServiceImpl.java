@@ -10,6 +10,7 @@ import com.sergeykool37.restApp.data.QuestionRepository;
 import com.sergeykool37.restApp.data.SessionRepository;
 import com.sergeykool37.restApp.entity.BaseEntity;
 import com.sergeykool37.restApp.entity.Journal;
+import com.sergeykool37.restApp.entity.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,12 +61,15 @@ public class JournalServiceImpl implements JournalService {
                                 answerRepository.findByQuestion(q)));
                 break;
             case SESSION_JOURNAL_ID:
-                collection = getCollection(
-                        req.search,
-                        questionRepository::findByNameContainingIgnoreCase,
-                        q -> new QuestionsItemDTO(
-                                q,
-                                answerRepository.findByQuestion(q)));
+                collection = sessionRepository
+                        .findByFioContainingIgnoreCase(req.search)
+                        .stream()
+                        .map(session -> new SessionDTO(sessionRepository.findById(new Long(session.getId()))
+                                .orElseThrow(() -> new RuntimeException(String
+                                        .format("Не найдена сессия с id %s", session.getId().toString()))
+                                ))
+                        )
+                        .collect(Collectors.toList());
                 break;
             default:
                 throw new RuntimeException(String

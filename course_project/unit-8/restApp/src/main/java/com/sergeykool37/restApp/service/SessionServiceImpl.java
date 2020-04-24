@@ -11,6 +11,8 @@ import com.sergeykool37.restApp.entity.Session;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -30,6 +32,7 @@ public class SessionServiceImpl implements SessionService {
         Session session=new Session();
         session.setFio(dto.name);
         session.setPercent(100.0);
+        session.setDate(LocalDateTime.now());
         sessionRepository.save(session);
         return new SessionDTO(sessionRepository.findById(new Long(session.getId()))
                 .orElseThrow(() -> new RuntimeException(String
