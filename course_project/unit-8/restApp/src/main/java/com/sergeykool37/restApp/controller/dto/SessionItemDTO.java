@@ -7,6 +7,7 @@ import java.util.List;
 
 public class SessionItemDTO {
     public String name;
+    public String id;
     public List<AnsweredQuestionDTO> questionsList;
 
     public SessionItemDTO(){}

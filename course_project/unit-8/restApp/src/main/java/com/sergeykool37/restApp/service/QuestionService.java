@@ -8,5 +8,5 @@ public interface QuestionService {
     QuestionsItemDTO createQuestion(QuestionsItemDTO dto);
     void editQuestion(QuestionsItemDTO dto);
     public List<QuestionsItemDTO> returnQestions();
-//
+
 }

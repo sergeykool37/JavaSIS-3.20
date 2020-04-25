@@ -2,7 +2,6 @@ package com.sergeykool37.restApp.controller.dto;
 
 import com.sergeykool37.restApp.entity.Session;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
