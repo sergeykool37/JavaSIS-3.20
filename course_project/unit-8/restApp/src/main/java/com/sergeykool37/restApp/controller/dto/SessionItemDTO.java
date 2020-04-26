@@ -12,5 +12,11 @@ public class SessionItemDTO {
 
     public SessionItemDTO(){}
 
+    public SessionItemDTO(String name,String id,List<AnsweredQuestionDTO> questionsList){
+        this.id=id;
+        this.name=name;
+        this.questionsList=questionsList;
+    }
+
 
 }

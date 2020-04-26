@@ -5,4 +5,9 @@ public class AnswerUserDTO {
     public boolean isSelected;
 
     public AnswerUserDTO(){}
+
+    public AnswerUserDTO(String id,boolean isSelected){
+        this.id=id;
+        this.isSelected=isSelected;
+    }
 }

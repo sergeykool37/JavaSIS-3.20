@@ -10,4 +10,9 @@ public class AnsweredQuestionDTO {
 
     public AnsweredQuestionDTO(){}
 
+    public AnsweredQuestionDTO(String id,List<AnswerUserDTO> answersList){
+        this.id=id;
+        this.answersList=answersList;
+    }
+
 }

@@ -4,7 +4,6 @@ import com.sergeykool37.restApp.controller.dto.AnswerUserDTO;
 import com.sergeykool37.restApp.controller.dto.AnsweredQuestionDTO;
 import com.sergeykool37.restApp.controller.dto.SessionItemDTO;
 import com.sergeykool37.restApp.data.AnswerRepository;
-import com.sergeykool37.restApp.data.QuestionRepository;
 import com.sergeykool37.restApp.data.SelectedAnswerRepository;
 import com.sergeykool37.restApp.data.SessionRepository;
 import com.sergeykool37.restApp.entity.Answer;
@@ -19,16 +18,13 @@ import java.util.List;
 @Service
 @Transactional
 public class SessionServiceImpl implements SessionService {
-    private final QuestionRepository questionRepository;
     private final SessionRepository sessionRepository;
     private final AnswerRepository answerRepository;
     private final SelectedAnswerRepository selectedAnswerRepository;
 
-    public SessionServiceImpl(QuestionRepository questionRepository,
-                              SessionRepository sessionRepository,
+    public SessionServiceImpl(SessionRepository sessionRepository,
                               AnswerRepository answerRepository,
                               SelectedAnswerRepository selectedAnswerRepository) {
-        this.questionRepository = questionRepository;
         this.sessionRepository = sessionRepository;
         this.answerRepository = answerRepository;
         this.selectedAnswerRepository = selectedAnswerRepository;
@@ -43,8 +39,8 @@ public class SessionServiceImpl implements SessionService {
         int answerTrue = (int) answersList.stream()
                 .filter(answer -> answer.getCorrect())
                 .count();
-        int rightsAnswerCount = getRightsAnswerCount(dto, session, answersList);
-        double result = (double) rightsAnswerCount / answerTrue * 100;
+        int TrueAnswerCount = getRightsAnswerCount(dto, session, answersList);
+        double result = (double) TrueAnswerCount / answerTrue * 100;
         session.setPercent(result);
         session.setDate(LocalDateTime.now());
         sessionRepository.save(session);
@@ -54,23 +50,21 @@ public class SessionServiceImpl implements SessionService {
     private int getRightsAnswerCount(SessionItemDTO dto,
                                      Session session,
                                      List<Answer> answersList) {
-        int rightsAnswerCount = 0;
+        int TrueAnswerCount = 0;
         for (AnsweredQuestionDTO question : dto.questionsList) {
             for (AnswerUserDTO answer : question.answersList) {
                 if (answer.isSelected) {
                             saveSelectedAnswer(session, answer);
                 }
-                for (Answer rightAnswer : answersList) {
-                    if (rightAnswer.getId().toString().equals(answer.id)) {
-                        if (rightAnswer.getCorrect()
-                                .equals(answer.isSelected) & rightAnswer.getCorrect()) {
-                            rightsAnswerCount++;
-                        }
-                    }
-                }
+                TrueAnswerCount+= (int) answersList
+                        .stream()
+                        .filter(rightAnswer -> rightAnswer.getId().toString().equals(answer.id))
+                        .filter(rightAnswer -> rightAnswer.getCorrect().equals(answer.isSelected)
+                        &rightAnswer.getCorrect())
+                        .count();
             }
         }
-        return rightsAnswerCount;
+        return TrueAnswerCount;
     }
 
     private void saveSelectedAnswer(Session session, AnswerUserDTO answer) {

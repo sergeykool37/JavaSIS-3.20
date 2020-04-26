@@ -10,8 +10,6 @@ import com.sergeykool37.restApp.data.QuestionRepository;
 import com.sergeykool37.restApp.data.SessionRepository;
 import com.sergeykool37.restApp.entity.BaseEntity;
 import com.sergeykool37.restApp.entity.Journal;
-import com.sergeykool37.restApp.entity.Session;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -65,10 +63,10 @@ public class JournalServiceImpl implements JournalService {
                         .findByFioContainingIgnoreCase(req.search)
                         .stream()
                         .map(session -> new SessionDTO(sessionRepository.findById(new Long(session.getId()))
-                                .orElseThrow(() -> new RuntimeException(String
-                                        .format("Не найдена сессия с id %s", session.getId().toString()))
+                                .orElseThrow(() -> new RuntimeException(String.format("Не найдена сессия с id %s",
+                                        session.getId().toString())
                                 ))
-                        )
+                        ))
                         .collect(Collectors.toList());
                 break;
             default:
