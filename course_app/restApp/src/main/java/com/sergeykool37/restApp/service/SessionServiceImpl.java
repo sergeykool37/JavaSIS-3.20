@@ -7,7 +7,6 @@ import com.sergeykool37.restApp.data.AnswerRepository;
 import com.sergeykool37.restApp.data.SelectedAnswerRepository;
 import com.sergeykool37.restApp.data.SessionRepository;
 import com.sergeykool37.restApp.entity.Answer;
-import com.sergeykool37.restApp.entity.SelectedAnswer;
 import com.sergeykool37.restApp.entity.Session;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +20,16 @@ public class SessionServiceImpl implements SessionService {
     private final SessionRepository sessionRepository;
     private final AnswerRepository answerRepository;
     private final SelectedAnswerRepository selectedAnswerRepository;
+    private final SelectedAnswerServiceImpl selectedAnswerService;
 
     public SessionServiceImpl(SessionRepository sessionRepository,
                               AnswerRepository answerRepository,
-                              SelectedAnswerRepository selectedAnswerRepository) {
+                              SelectedAnswerRepository selectedAnswerRepository,
+                              SelectedAnswerServiceImpl selectedAnswerService) {
         this.sessionRepository = sessionRepository;
         this.answerRepository = answerRepository;
         this.selectedAnswerRepository = selectedAnswerRepository;
+        this.selectedAnswerService = selectedAnswerService;
     }
 
 
@@ -54,26 +56,17 @@ public class SessionServiceImpl implements SessionService {
         for (AnsweredQuestionDTO question : dto.questionsList) {
             for (AnswerUserDTO answer : question.answersList) {
                 if (answer.isSelected) {
-                            saveSelectedAnswer(session, answer);
+                    selectedAnswerService.saveSelectedAnswer(session, answer);
                 }
-                TrueAnswerCount+= (int) answersList
+                TrueAnswerCount += (int) answersList
                         .stream()
                         .filter(rightAnswer -> rightAnswer.getId().toString().equals(answer.id))
                         .filter(rightAnswer -> rightAnswer.getCorrect().equals(answer.isSelected)
-                        &rightAnswer.getCorrect())
+                                & rightAnswer.getCorrect())
                         .count();
             }
         }
         return TrueAnswerCount;
-    }
-
-    private void saveSelectedAnswer(Session session, AnswerUserDTO answer) {
-        SelectedAnswer selectedAnswer = new SelectedAnswer();
-        selectedAnswer.setAnswer(answerRepository.findById(new Long(answer.id))
-                .orElseThrow(() -> new RuntimeException(String
-                        .format("Не найден вопрос с id %s", answer.id))));
-        selectedAnswer.setSession(session);
-        selectedAnswerRepository.save(selectedAnswer);
     }
 
 }
