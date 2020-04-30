@@ -16,12 +16,21 @@ import java.util.List;
 @Service
 @Transactional
 public class SessionServiceImpl implements SessionService {
+
     @Autowired
     private SessionRepository sessionRepository;
     @Autowired
     private AnswerServiceImpl answerService;
     @Autowired
     private SelectedAnswerServiceImpl selectedAnswerService;
+
+    public SessionServiceImpl(SessionRepository sessionRepository,
+                              AnswerServiceImpl answerService,
+                              SelectedAnswerServiceImpl selectedAnswerService) {
+        this.sessionRepository = sessionRepository;
+        this.answerService = answerService;
+        this.selectedAnswerService = selectedAnswerService;
+    }
 
     @Override
     public String createSession(SessionItemDTO dto) {
@@ -53,16 +62,16 @@ public class SessionServiceImpl implements SessionService {
     private double getRightsAnswerCount(SessionItemDTO dto,
                                         Session session,
                                         List<Answer> answersList) {
-        int TrueAnswerCount = 0;
+        double TrueAnswerCount = 0;
         for (AnsweredQuestionDTO question : dto.questionsList) {
-            int n = question.answersList.size();//количество вариантов для ответа
-            int m = (int) answersList
+            double n = question.answersList.size();//количество вариантов для ответа
+            double m = (double) answersList
                     .stream()
                     .filter(answer -> answer.getIsCorrect() == Boolean.TRUE &
                             answer.getQuestion().getId().toString().equals(question.id))
                     .count();//количество верных вариантов
-            int k = 0;//количество выбранных верных вариантов ответа
-            int w = 0;//количество выбранных неверных вариантов ответа
+            double k = 0;//количество выбранных верных вариантов ответа
+            double w = 0;//количество выбранных неверных вариантов ответа
             for (AnswerUserDTO answer : question.answersList) {
                 if (answer.isSelected) {
                     if (answer.isSelected == answersList.stream()
@@ -80,9 +89,10 @@ public class SessionServiceImpl implements SessionService {
             }
             if (m != n) {
                 TrueAnswerCount += (double) Math.max(0, k / m - w / (n - m));
-            } else {
+            } else  {
                 TrueAnswerCount += (double) Math.max(0, k / m);
             }
+
         }
         return TrueAnswerCount;
     }
