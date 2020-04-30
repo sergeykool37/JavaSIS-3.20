@@ -6,21 +6,12 @@ import javax.persistence.*;
 
 @MappedSuperclass
 @Data
-public class BaseEntity {
+public class BaseEntity <TIDType> {
 
-    @Column
+    @Column(name = "name")
     private String name;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 
 }

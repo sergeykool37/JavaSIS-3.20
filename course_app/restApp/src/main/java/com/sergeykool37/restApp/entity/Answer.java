@@ -8,14 +8,14 @@ import javax.persistence.*;
 @Data
 public class Answer extends BaseEntity {
 
-    @Column
+    @Column(name = "name")
     private String name;
 
     @JoinColumn(name = "question_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Question question;
 
-    @Column
+    @Column(name="is_correct")
     private Boolean isCorrect;
 
 

@@ -17,12 +17,13 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static com.sergeykool37.restApp.Enum.QUESTIONS_JOURNAL_ID;
+import static com.sergeykool37.restApp.Enum.SESSION_JOURNAL_ID;
+
 @Service
 @Transactional
 public class JournalServiceImpl implements JournalService {
 
-    public static final String QUESTIONS_JOURNAL_ID = "questions";
-    public static final String SESSION_JOURNAL_ID = "sessions";
     private final AnswerRepository answerRepository;
     private final JournalRepository journalRepository;
     private final QuestionRepository questionRepository;

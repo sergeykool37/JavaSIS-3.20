@@ -14,10 +14,10 @@ public class Journal {
     @Id
     private String id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name="DEFAULT_PAGE_SIZE")
     private Long defaultPageSize;
 
 }

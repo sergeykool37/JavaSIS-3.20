@@ -10,6 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
+import static com.sergeykool37.restApp.Enum.QUESTIONS_JOURNAL_ID;
+import static com.sergeykool37.restApp.Enum.SESSION_JOURNAL_ID;
+
 @SpringBootApplication
 public class RestAppApplication {
 	@Autowired
@@ -21,13 +24,13 @@ public class RestAppApplication {
 	@PostConstruct
 	private void InitData(){
 		Journal journal=new Journal();
-		journal.setId(JournalServiceImpl.QUESTIONS_JOURNAL_ID);
+		journal.setId(QUESTIONS_JOURNAL_ID);
 		journal.setName("Вопросы");
 		journal.setDefaultPageSize(15L);
 		journalRepository.save(journal);
 
 		Journal journalSession=new Journal();
-		journal.setId(JournalServiceImpl.SESSION_JOURNAL_ID);
+		journal.setId(SESSION_JOURNAL_ID);
 		journal.setName("Сессии");
 		journal.setDefaultPageSize(15L);
 		journalRepository.save(journal);

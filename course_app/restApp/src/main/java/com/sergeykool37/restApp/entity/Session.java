@@ -9,17 +9,17 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 public class Session {
-    @Column
+    @Column(name = "fio")
     private String fio;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(name = "percent")
     private Double percent;
 
-    @Column
+    @Column(name="date")
     private LocalDateTime date;
 
 }
