@@ -27,7 +27,7 @@ public class SessionServiceImpl implements SessionService {
     public String createSession(SessionItemDTO dto) {
         Session session = new Session();
         session.setFio(dto.name);
-        List<Answer> answersList = (List) answerService.findAllAnswer();
+        List<Answer> answersList = answerService.findAllAnswer();
         int answerTrue = dto.questionsList.size();
         double TrueAnswerCount = getRightsAnswerCount(dto, session, answersList);
         Double result = (Double) TrueAnswerCount / answerTrue * 100;
@@ -68,8 +68,7 @@ public class SessionServiceImpl implements SessionService {
                     if (answer.isSelected == answersList.stream()
                             .filter(answer1 -> answer1.getId().toString().equals(answer.id))
                             .findAny()
-                            .orElseThrow(() -> new RuntimeException(String.format("Не найден ответ с  id %s",
-                                    session.getId().toString())))
+                            .orElseThrow(() -> new RuntimeException(String.format("Не найден ответ с  id %s", answer.id)))
                             .getIsCorrect()) {
                         k += 1;
                     } else {
