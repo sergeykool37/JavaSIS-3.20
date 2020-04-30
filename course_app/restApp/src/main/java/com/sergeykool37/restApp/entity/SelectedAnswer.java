@@ -1,10 +1,12 @@
 package com.sergeykool37.restApp.entity;
 
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 
 @Entity
+@Data
 public class SelectedAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,27 +20,4 @@ public class SelectedAnswer {
     @ManyToOne(fetch = FetchType.LAZY)
     private Session session;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Answer getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
-    }
-
-    public Session getSession() {
-        return session;
-    }
-
-    public void setSession(Session session) {
-        this.session = session;
-    }
 }

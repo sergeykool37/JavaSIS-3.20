@@ -33,7 +33,7 @@ public class QuestionServiceImpl implements QuestionService {
         for (AnswerItemDTO answerDTO : dto.answers) {
             Answer answer = new Answer();
             answer.setName(answerDTO.answerText);
-            answer.setCorrect(answerDTO.isCorrect);
+            answer.setIsCorrect(answerDTO.isCorrect);
             answer.setQuestion(question);
 
             answerRepository.save(answer);
@@ -60,7 +60,7 @@ public class QuestionServiceImpl implements QuestionService {
         for (AnswerItemDTO answerDTO : dto.answers) {
             Answer answer = new Answer();
             answer.setName(answerDTO.answerText);
-            answer.setCorrect(answerDTO.isCorrect);
+            answer.setIsCorrect(answerDTO.isCorrect);
             answer.setQuestion(question);
             answerRepository.save(answer);
         }

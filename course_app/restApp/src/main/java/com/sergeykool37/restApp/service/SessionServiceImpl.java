@@ -4,7 +4,6 @@ import com.sergeykool37.restApp.controller.dto.AnswerUserDTO;
 import com.sergeykool37.restApp.controller.dto.AnsweredQuestionDTO;
 import com.sergeykool37.restApp.controller.dto.SessionItemDTO;
 import com.sergeykool37.restApp.data.AnswerRepository;
-import com.sergeykool37.restApp.data.SelectedAnswerRepository;
 import com.sergeykool37.restApp.data.SessionRepository;
 import com.sergeykool37.restApp.entity.Answer;
 import com.sergeykool37.restApp.entity.Session;
@@ -51,7 +50,7 @@ public class SessionServiceImpl implements SessionService {
             int n = question.answersList.size();//количество вариантов для ответа
             int m = (int) answersList
                     .stream()
-                    .filter(answer -> answer.getCorrect() == Boolean.TRUE &
+                    .filter(answer -> answer.getIsCorrect() == Boolean.TRUE &
                             answer.getQuestion().getId().toString().equals(question.id))
                     .count();//количество верных вариантов
             int k = 0;//количество выбранных верных вариантов ответа
@@ -63,7 +62,7 @@ public class SessionServiceImpl implements SessionService {
                             .findAny()
                             .orElseThrow(() -> new RuntimeException(String.format("Не найден ответ с  id %s",
                                     session.getId().toString())))
-                            .getCorrect()) { k += 1;}
+                            .getIsCorrect()) { k += 1;}
                     else {w += 1;};
                     selectedAnswerService.saveSelectedAnswer(session, answer);
                 }
