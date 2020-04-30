@@ -35,11 +35,11 @@ public class SessionServiceImpl implements SessionService {
         List<Answer> answersList = (List) answerRepository.findAll();
         int answerTrue = dto.questionsList.size();
         double TrueAnswerCount = getRightsAnswerCount(dto, session, answersList);
-        double result = (double) TrueAnswerCount / answerTrue * 100;
+        Double result = (Double) TrueAnswerCount / answerTrue * 100;
         session.setPercent(result);
         session.setDate(LocalDateTime.now());
         sessionRepository.save(session);
-        return String.format("%d", (int) result);
+        return result.toString();
     }
 
     private double getRightsAnswerCount(SessionItemDTO dto,

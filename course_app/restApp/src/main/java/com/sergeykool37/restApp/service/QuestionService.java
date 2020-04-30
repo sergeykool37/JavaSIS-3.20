@@ -1,6 +1,7 @@
 package com.sergeykool37.restApp.service;
 
 import com.sergeykool37.restApp.controller.dto.QuestionsItemDTO;
+import com.sergeykool37.restApp.entity.Question;
 
 import java.util.List;
 
@@ -9,6 +10,5 @@ public interface QuestionService {
 
     void editQuestion(QuestionsItemDTO dto);
 
-    public List<QuestionsItemDTO> returnQestions();
-
+    List<QuestionsItemDTO> returnQestions();
 }

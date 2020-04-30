@@ -52,7 +52,10 @@ public class QuestionServiceImpl implements QuestionService {
         List<Answer> answersCurrent = answerRepository.findByQuestion(question);
 
         for (int i = 0; i < answersCurrent.size(); i++) {
-            if (answersCurrent.get(i).getQuestion().getId() == question.getId()) {
+            if (answersCurrent
+                    .get(i)
+                    .getQuestion()
+                    .getId() == question.getId()) {
                 answerRepository.delete(answersCurrent.get(i));
             }
         }
@@ -76,4 +79,5 @@ public class QuestionServiceImpl implements QuestionService {
                  .collect(Collectors.toList());
 
     }
+
 }
